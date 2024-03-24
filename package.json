@@ -8,7 +8,8 @@
     "setup-project": "npm i && cd client && npm i",
     "client": "cd client && npm run dev",
     "server": "nodemon server",
-    "start": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\""
+    "start": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\"",
+    "setup-production-app": "npm i && cd client && npm i && npm run build"
   },
   "keywords": [],
   "author": "",

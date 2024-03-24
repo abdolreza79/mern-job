@@ -30,7 +30,7 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET,
 })
 
-app.use(express.static(path.resolve(__dirname, './public')))
+app.use(express.static(path.resolve(__dirname, './client/dist')))
 app.use(cookieParser())
 
 app.use('/api/v1/auth', authRouter)
@@ -41,8 +41,7 @@ app.get('/api/v1/test', (req, res) => {
   res.json({ msg: 'test route' })
 })
 app.use('*', (req, res, next) => {
-  // res.status(404).json({ msg: 'resource not found' })
-  res.sendFile(path.join(__dirname, '/public/index.html'))
+  res.sendFile(path.join(__dirname, '/client/dist/index.html'))
 })
 app.use(errorHandlerMiddleware)
 
